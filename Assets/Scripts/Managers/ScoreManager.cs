@@ -6,6 +6,11 @@ public class ScoreManager : MonoBehaviour
 {
     public static int score;
 
+    //========================//
+    // Test
+    private int testInt;
+    //========================//
+
 
     Text text;
 
