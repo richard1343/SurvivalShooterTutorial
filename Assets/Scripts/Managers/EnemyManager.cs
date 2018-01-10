@@ -16,12 +16,12 @@ public class EnemyManager : MonoBehaviour
 
     void Spawn ()
     {
-        if(playerHealth.currentHealth <= 0f)
+        if (playerHealth.currentHealth <= 0f)
         {
             return;
         }
 
-        int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
         Instantiate (enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
