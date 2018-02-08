@@ -101,7 +101,7 @@ namespace CompleteProject
         }
 
 
-        public void RestartLevel ()
+        void RestartLevel ()
         {
             // Reload the level that is currently loaded.
             SceneManager.LoadScene (0);
