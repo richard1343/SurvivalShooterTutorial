@@ -51,10 +51,18 @@ public class EnemyAttack : MonoBehaviour
             Attack ();
         }
 
-        if(playerHealth.currentHealth <= 0)
-        {
-            anim.SetTrigger ("PlayerDead");
-        }
+        anim.SetBool("PlayerDead", playerHealth.currentHealth <= 0);
+
+        //bool isPlayerDead = playerHealth.currentHealth <= 0;
+
+        //if (isPlayerDead)
+        //{
+        //    anim.SetBool("PlayerDead", isPlayerDead);
+        //}
+        //else
+        //{
+        //    anim.SetBool("PlayerDead", isPlayerDead);
+        //}
     }
 
 
