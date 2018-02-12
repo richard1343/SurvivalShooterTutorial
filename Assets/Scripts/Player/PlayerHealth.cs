@@ -65,6 +65,15 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void RegainHealth ()
+    {
+        if(currentHealth < startingHealth)
+        {
+            System.Threading.Thread.Sleep(5000);
+            currentHealth += 5;
+        }
+    }
+
 
     private void Death()
     {
