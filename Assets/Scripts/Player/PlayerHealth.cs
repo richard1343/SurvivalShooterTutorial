@@ -11,10 +11,11 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public Image damageImage;
     public AudioClip deathClip;
+    public AudioClip hurtClip;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
-
+    
     Animator anim;
     AudioSource playerAudio;
     PlayerMovement playerMovement;
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     bool isDead;
     bool damaged;
 
+    public int lifeCount = 3;
 
     void Awake ()
     {
@@ -64,24 +66,43 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    private void Death ()
+    private void Death()
     {
         isDead = true;
 
-        playerShooting.DisableEffects ();
+        playerShooting.ToggleEffects(false);
 
-        anim.SetTrigger ("Die");
+        anim.SetBool("Die", true);
 
         playerAudio.clip = deathClip;
-        playerAudio.Play ();
+        playerAudio.Play();
 
         playerMovement.enabled = false;
         playerShooting.enabled = false;
+
+        lifeCount -= 1;
     }
 
 
     public void RestartLevel ()
     {
         SceneManager.LoadScene (0);
+    }
+
+    public void Revive()
+    {
+        isDead = false;
+
+        playerShooting.ToggleEffects(true);
+
+        playerMovement.enabled = true;
+        playerShooting.enabled = true;
+
+        currentHealth = startingHealth;
+        healthSlider.value = currentHealth;
+
+        transform.position = Vector3.zero;
+
+        playerAudio.clip = hurtClip;
     }
 }

@@ -39,15 +39,15 @@ public class PlayerShooting : MonoBehaviour
 
         if(timer >= timeBetweenBullets * effectsDisplayTime)
         {
-            DisableEffects ();
+            ToggleEffects(false);
         }
     }
 
 
-    public void DisableEffects ()
+    public void ToggleEffects (bool toggle)
     {
-        gunLine.enabled = false;
-        gunLight.enabled = false;
+        gunLine.enabled = toggle;
+        gunLight.enabled = toggle;
     }
 
 

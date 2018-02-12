@@ -24,7 +24,8 @@ public class EnemyMovement : MonoBehaviour
         {
             nav.SetDestination (player.position);
         }
-        else
+
+        if (playerHealth.lifeCount == 0)
         {
             nav.enabled = false;
         }

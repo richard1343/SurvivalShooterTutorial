@@ -162,6 +162,11 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 143095142}
+    - target: {fileID: 114922942387434810, guid: 19b626b813959614c8fb563ea33d6e7b,
+        type: 2}
+      propertyPath: hurtClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19b626b813959614c8fb563ea33d6e7b, type: 2}
   m_IsPrefabParent: 0
